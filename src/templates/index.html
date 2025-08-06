@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Predicción de Diabetes</title>
+</head>
+<body>
+    <h2>Formulario para predecir</h2>
+    <form method="post" action="/predecir">
+    <label>Pregnancies:</label><input type="number" name="Pregnancies" step="any"><br>
+    <label>Glucose:</label><input type="number" name="Glucose" step="any"><br>
+    <label>BloodPressure:</label><input type="number" name="BloodPressure" step="any"><br>
+    <label>SkinThickness:</label><input type="number" name="SkinThickness" step="any"><br>
+    <label>Insulin:</label><input type="number" name="Insulin" step="any"><br>
+    <label>BMI:</label><input type="number" name="BMI" step="any"><br>
+    <label>Age:</label><input type="number" name="Age" step="any"><br>
+    <label>DiabetesPedigreeFunction:</label><input type="number" name="DiabetesPedigreeFunction" step="any"><br>
+    <input type="submit" value="Predecir">
+</form>
+
+    {% if prediccion is defined %}
+        <h3>Predicción: {% if prediccion == 1 %} Tiene diabetes {% else %} No tiene diabetes {% endif %}</h3>
+    {% endif %}
+</body>
+</html>
